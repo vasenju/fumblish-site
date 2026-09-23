@@ -12,18 +12,27 @@
 </head>
 <body>
 <h1>Fumblish Privacy Policy</h1>
-<p><em>Last updated: 18 September 2026</em></p>
+<p><em>Last updated: 23 September 2026</em></p>
 
-<p>Fumblish ("the app") is published by Routapolku (Juho Vasenius, Finland). This policy explains what data the app handles and why. The short version: your learning data stays on your device, and the text you write in conversations is sent to an AI provider to generate answers.</p>
+<p>Fumblish ("the app") is published by Routapolku (Juho Vasenius, Finland). This policy explains what data the app handles and why. The short version: your learning data stays on your device; the text you write in conversations passes through our server to an AI provider to generate answers; our server sees a random device identifier, usage counts and crash reports, and keeps a backup of your data only if you ask it to.</p>
 
 <h2>Data stored on your device</h2>
-<p>Word lists, practice history, conversations, summaries, evaluations and settings are stored in the app's private storage on your device. They are not uploaded to us. Uninstalling the app deletes them. Android's backup service may include this data in your Google backup according to your device settings.</p>
+<p>Word lists, practice history, conversations, summaries, evaluations and settings are stored in the app's private storage on your device. They are not uploaded to us unless you use the backup described below. Uninstalling the app deletes them. Android's backup service may include this data in your Google backup according to your device settings.</p>
+
+<h2>Data sent to our server</h2>
+<p>The app talks to a small server we run (Amazon Web Services, EU region Stockholm). Every request carries a random device identifier that the app generates on first launch, plus the app version, the device model and the Android version. The identifier is not linked to your name, email address or Google account. The server uses it to count your AI requests per day (the free tier has a daily limit) and to remember that a Premium subscription is active. Per-device usage counts are kept for three days; daily totals without any device identity are kept for statistics.</p>
+
+<h2>Optional backup</h2>
+<p>If you tap <em>Back up</em> in Settings, the app uploads a copy of your word lists, conversations, situations and settings to our server, filed under your device identifier, so you can restore it on a new phone. It stays there until you delete it from Settings or through the <a href="data-deletion.html">data deletion page</a>. Nothing is uploaded unless you ask for it.</p>
+
+<h2>Crash reports</h2>
+<p>If the app crashes, it saves a technical report and sends it to our server the next time it starts. The report contains the type and message of the error, the code location (stack trace), the app version, the device model, the Android version and the device identifier. It never contains conversation text or word lists. Crash reports are kept in our server logs for 30 days and are used only to find and fix bugs.</p>
 
 <h2>Data sent to an AI provider</h2>
-<p>To generate replies, summaries, evaluations, explanations and example sentences, the app sends the relevant text to a large-language-model provider (currently OpenAI). This includes the messages you write in a conversation, the words in the word list you are working on, and the built-in situation descriptions. No name, email address or device identifier is attached to these requests. The provider processes the text to produce the answer and handles it under its own API data policy, which does not use API data for model training. Do not write personal information about yourself or others into conversations.</p>
+<p>To generate replies, summaries, evaluations, translations, explanations and example sentences, the app sends the relevant text through our server to a large-language-model provider (currently OpenAI). This includes the messages you write in a conversation, the words in the word list you are working on, and the situation descriptions. Our server forwards the text and does not store it; no name, email address or device identifier is passed on to the provider. The provider processes the text to produce the answer and handles it under its own API data policy, which does not use API data for model training. Do not write personal information about yourself or others into conversations.</p>
 
 <h2>Subscription and payments</h2>
-<p>Premium is sold as a Google Play subscription. Google handles the purchase, payment details and renewal. The app only receives a purchase token to check whether the subscription is active. We do not receive your payment details.</p>
+<p>Premium is sold as a Google Play subscription. Google handles the purchase, payment details and renewal. The app receives a purchase token, and our server confirms it with Google Play to check whether the subscription is active. We do not receive your payment details.</p>
 
 <h2>Optional diagnostic log</h2>
 <p>The app can keep a local log of AI requests and responses to help you check a result. It is stored only on your device, is off by default in the released app, and you can share or delete it from Settings.</p>
@@ -35,7 +44,7 @@
 <p>The app is not directed at children under 13 and does not knowingly collect data from them.</p>
 
 <h2>Changes</h2>
-<p>If the app starts sending data to our own servers in a future version (for example, to sync your word lists between devices), this policy will be updated before that version is released.</p>
+<p>When a new version changes what the app collects, this page is updated before that version is released.</p>
 
 <h2>Contact</h2>
 <p>Questions about this policy: <a href="mailto:jpvasen@gmail.com">jpvasen@gmail.com</a></p>
