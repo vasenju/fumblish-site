@@ -16,13 +16,14 @@
 <h2>What data exists and where</h2>
 <ul>
   <li><strong>On your device:</strong> word lists, practice history, conversations, results and settings. Deleting the app deletes them.</li>
-  <li><strong>On our server:</strong> only two things. (1) A daily usage counter keyed by an anonymous device id, which expires automatically within 3 days. (2) An optional backup of your local data, only if you pressed "Back up now" in Settings.</li>
+  <li><strong>On our server:</strong> (1) a daily usage counter keyed by an anonymous device id, which expires automatically within 3 days; (2) one activity record per install (active dates, request counts, app version, device model), deleted 400 days after the last activity; (3) an optional backup of your local data, only if you pressed "Back up now" in Settings; (4) if you use Friends, your nickname and avatar, your group memberships and what you chose to share.</li>
   <li><strong>At the AI provider:</strong> the text you send in conversations and word lookups is processed by OpenAI to generate the answer and handled under its API data policy (retained up to 30 days for abuse monitoring, not used for training).</li>
 </ul>
 
 <h2>How to delete</h2>
 <ol>
   <li><strong>Backup:</strong> in the app, open Settings → Backup → "Delete backup". This permanently removes the copy on our server.</li>
+  <li><strong>Friends</strong>: delete a single shared item from Friends → My shares, or everything (profile, memberships, shares, reactions) from Settings → Friends → "Delete my shared data".</li>
   <li><strong>Everything on the device:</strong> uninstall the app, or clear its storage in Android settings.</li>
   <li><strong>Anything else, or if you no longer have the app:</strong> email <a href="mailto:jpvasen@gmail.com">jpvasen@gmail.com</a> with the subject "Fumblish data deletion". If you know it, include the device id shown in Settings → Backup. We delete any server-side data within 30 days and confirm by email.</li>
 </ol>

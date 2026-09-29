@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join a Fumblish group</title>
+<meta name="robots" content="noindex">
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1b1c1a; background: #fffbf5; text-align: center; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.2rem; }
+  .code { font-size: 2.6rem; font-weight: 700; letter-spacing: 0.18em; margin: 1.2rem 0; padding: 0.6rem 0; border: 2px dashed #c9b891; border-radius: 14px; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .button { display: block; margin: 0.8rem 0; padding: 0.9rem 1rem; border-radius: 999px; background: #3b5d3a; color: #fff; text-decoration: none; font-weight: 600; }
+  .button.secondary { background: transparent; color: #3b5d3a; border: 2px solid #3b5d3a; }
+  .muted { color: #6b665c; font-size: 0.95rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1a; color: #ece6da; }
+    .code { border-color: #6b665c; }
+    .button { background: #9fc59c; color: #1b1c1a; }
+    .button.secondary { background: transparent; color: #9fc59c; border-color: #9fc59c; }
+    .muted { color: #a8a295; }
+  }
+</style>
+</head>
+<body>
+<h1>You're invited to a Fumblish group</h1>
+<p class="muted">Friends share their clumsiest conversations and word lists here. Nobody is perfect, that's the point.</p>
+<div class="code" id="code">–</div>
+<a class="button" id="open" href="#">Open in Fumblish</a>
+<a class="button secondary" href="https://play.google.com/store/apps/details?id=fi.routapolku.fumblish">Get Fumblish on Google Play</a>
+<p class="muted">Already have the app? Open Fumblish → Friends → Join with a code, and type the code above.</p>
+<p class="muted"><a href="privacy-policy.html">Privacy policy</a></p>
+<script>
+  // Only codes from the invite alphabet are shown or passed on.
+  var raw = (new URLSearchParams(location.search).get("code") || "").toUpperCase().replace(/-/g, "");
+  var code = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{6}$/.test(raw) ? raw : "";
+  var open = document.getElementById("open");
+  if (code) {
+    document.getElementById("code").textContent = code.slice(0, 3) + "-" + code.slice(3);
+    var play = "https://play.google.com/store/apps/details?id=fi.routapolku.fumblish";
+    open.href = "intent://join?code=" + code + "#Intent;scheme=fumblish;package=fi.routapolku.fumblish;S.browser_fallback_url=" + encodeURIComponent(play) + ";end";
+  } else {
+    document.getElementById("code").textContent = "no code";
+    open.style.display = "none";
+  }
+</script>
+</body>
+</html>
